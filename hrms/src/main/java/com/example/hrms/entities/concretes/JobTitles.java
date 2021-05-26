@@ -1,28 +1,19 @@
 package com.example.hrms.entities.concretes;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name="JobTitles")
+@Table(name="job_titles")
 @Data
 public class JobTitles {
     @Id
-    @GeneratedValue
-    @Column(name="TitleId")
+    @Column(name="title_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int titleId;
 
-    @Column(name="Title")
+    @Column(name="title")
     private String title;
 
-    public JobTitles(int titleId, String title) {
-        super();
-        this.setTitleId(titleId);
-        this.title = title;
-    }
 
-    public JobTitles() {
-
-    }
 }
